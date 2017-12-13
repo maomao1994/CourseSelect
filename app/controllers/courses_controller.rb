@@ -72,8 +72,20 @@ class CoursesController < ApplicationController
 
   def select
     @course=Course.find_by_id(params[:id])
-    current_user.courses<<@course
-    flash={:suceess => "成功选择课程: #{@course.name}"}
+    #处理冲突信息
+    tmp=[]
+    current_user.courses.each do |course|
+      #判断当前所有的课程是否和新加入的课程时间上存在冲突
+      if @course.course_time==course.course_time
+        tmp<<course.name
+      end
+    end
+    if tmp.size==0
+      current_user.courses<<@course
+      flash={:success => "成功选择课程: #{@course.name},上课时间：#{@course.course_time}"}
+    else
+      flash={:fail=> "选课不成功：#{@course.name}的上课时间和#{tmp}课程时间冲突"}
+    end
     redirect_to courses_path, flash: flash
   end
 

@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'homes#index'
 
+  # set route test 
   resources :courses do
     member do
       get :select
@@ -26,6 +27,8 @@ Rails.application.routes.draw do
     end
     collection do
       get :list
+      get :mycourses
+      get :choosecourses
     end
   end
 
