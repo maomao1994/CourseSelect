@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'homes#index'
 
-  # set route test 
+  # set route test
   resources :courses do
     member do
       get :select
@@ -34,7 +34,8 @@ Rails.application.routes.draw do
 
   resources :grades, only: [:index, :update]
   resources :users
-
+  resources :account_activations, only: [:edit]
+  
   get 'sessions/login' => 'sessions#new'
   post 'sessions/login' => 'sessions#create'
   delete 'sessions/logout' => 'sessions#destroy'

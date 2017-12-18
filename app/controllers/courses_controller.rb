@@ -58,8 +58,11 @@ class CoursesController < ApplicationController
   #-------------------------for students----------------------
 
   def list
+    UserMailer.password_reset.deliver_now
     #-------QiaoCode--------
+    #所有可以选择的课程
     @course=Course.where(:open=>true)
+    #除去已经选过的课程，留下将要选择的可选的课程
     @course=@course-current_user.courses
     tmp=[]
     @course.each do |course|
