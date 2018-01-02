@@ -29820,3 +29820,172 @@ WHERE c.contype = 'f'
   AND t3.nspname = ANY (current_schemas(false))
 ORDER BY c.conname
 [0m
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-01 23:50:44 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomesController#index as HTML
+  Rendered homes/index.html.erb within layouts/application (1743.9ms)
+  Rendered layouts/_header.html.erb (6.6ms)
+  Rendered layouts/_content.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 2125ms (Views: 2071.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-e0511daf77394d1bf649c764dada1c9c167c4558f89aea5247f5b29d96fb2c10.css?body=1" for 127.0.0.1 at 2018-01-01 23:50:46 -0800
+
+
+Started GET "/assets/bootstrap.self-b38817c3e3a3049abb1fc08dd6ae448b23330f8453226efdb074710209474f75.js?body=1" for 127.0.0.1 at 2018-01-01 23:50:46 -0800
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 127.0.0.1 at 2018-01-01 23:50:46 -0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2018-01-01 23:50:46 -0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2018-01-01 23:50:46 -0800
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for 127.0.0.1 at 2018-01-01 23:50:46 -0800
+
+
+Started GET "/assets/account_activations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-01-01 23:50:47 -0800
+
+
+Started GET "/assets/profile-adb1ac7dd6ca3b6ed8fcbb01011c9d1891fd1ff755071b32211246554314d5ec.png" for 127.0.0.1 at 2018-01-01 23:50:47 -0800
+
+
+Started GET "/sessions/login" for 127.0.0.1 at 2018-01-01 23:50:48 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (48.9ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_content.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 116ms (Views: 114.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/background-d6049bed5a9f543a5666a01dcb723d7eeb74907d3a673ccb520e6e7b4c0955f2.jpg" for 127.0.0.1 at 2018-01-01 23:50:49 -0800
+
+
+Started POST "/sessions/login" for 127.0.0.1 at 2018-01-01 23:50:53 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+Q83Y5AHqHLqo1oJ/F/MGbI+0wZQRwrdEIcQtK0EVuPXqwNrp7+Q/MTWE1X+vWAxpXiv44xvWprKNo37TIWwCQ==", "session"=>{"email"=>"student1@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "button"=>""}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "student1@test.com"]]
+  [1m[36m (0.8ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 248ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-01 23:50:54 -0800
+Processing by HomesController#index as HTML
+  Rendered homes/index.html.erb within layouts/application (7.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 36]]
+  Rendered layouts/_header.html.erb (2.7ms)
+  Rendered layouts/_content.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 82ms (Views: 80.6ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/sessions/logout" for 127.0.0.1 at 2018-01-01 23:51:01 -0800
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"vMVCqf+s/V7JjMn4zv54WmX2iB1WkPZ/MoC+VI9ysa2SYXahyBTF0Of5gKTMHNRycrD0+Iq4pjjoMSMbbvNXRw=="}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 36]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-01 23:51:01 -0800
+Processing by HomesController#index as HTML
+  Rendered homes/index.html.erb within layouts/application (8.0ms)
+  Rendered layouts/_header.html.erb (2.9ms)
+  Rendered layouts/_content.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 73ms (Views: 72.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-01-01 23:51:02 -0800
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (18.4ms)
+  Rendered users/_form.html.erb (1005.3ms)
+  Rendered users/new.html.erb within layouts/application (1081.3ms)
+  Rendered layouts/_header.html.erb (6.7ms)
+  Rendered layouts/_content.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 1262ms (Views: 1260.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-01-01 23:51:24 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jSvisSjj+rWoeQUL8YnvvQ0TaH+qJejw6TZSGVYTkgyjj9a5H1vCO4YMTFfza0OVGlUUmnYNuLczh89Wt5J05g==", "user"=>{"name"=>"刘丽艳", "email"=>"tianmao1994@163.com", "major"=>"计算机", "department"=>"信工所", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"注册"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (1.9ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('tianmao1994@163.com') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("name", "email", "major", "department", "password_digest", "created_at", "updated_at", "activation_digest") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "刘丽艳"], ["email", "tianmao1994@163.com"], ["major", "计算机"], ["department", "信工所"], ["password_digest", "$2a$10$TpelQVoj76YQOEsDthVMm.9hY2uzGo6g1iCYMuKQ5.AES1vODSJHe"], ["created_at", "2018-01-02 07:51:24.256304"], ["updated_at", "2018-01-02 07:51:24.256304"], ["activation_digest", "$2a$10$nne1Do2Mb2HmxR8G4zekUuJXcS1n6K4IlnwTlRjcz8MbkBue2tE7W"]]
+  [1m[35m (34.5ms)[0m  COMMIT
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (22.7ms)
+
+UserMailer#account_activation: processed outbound mail in 56.4ms
+Completed 500 Internal Server Error in 549ms (ActiveRecord: 37.2ms)
+
+ActionView::Template::Error (Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
+    6: 欢迎使用选课系统，点击链接激活账户:
+    7: </p>
+    8: 
+    9: <%= link_to "Activate", edit_account_activation_url(@user.activation_token,email: @user.email) %>
+  app/views/user_mailer/account_activation.html.erb:9:in `_app_views_user_mailer_account_activation_html_erb__2273712000742255007_70175861204160'
+  app/mailers/user_mailer.rb:10:in `account_activation'
+  app/controllers/users_controller.rb:23:in `create'
+
+
+  Rendered /home/mao/.rvm/gems/ruby-2.2.7@CourseSelect/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.2ms)
+  Rendered /home/mao/.rvm/gems/ruby-2.2.7@CourseSelect/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.0ms)
+  Rendered /home/mao/.rvm/gems/ruby-2.2.7@CourseSelect/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/mao/.rvm/gems/ruby-2.2.7@CourseSelect/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (56.9ms)
+  Rendered /home/mao/.rvm/gems/ruby-2.2.7@CourseSelect/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/mao/.rvm/gems/ruby-2.2.7@CourseSelect/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/mao/.rvm/gems/ruby-2.2.7@CourseSelect/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/mao/.rvm/gems/ruby-2.2.7@CourseSelect/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (3.2ms)
+  Rendered /home/mao/.rvm/gems/ruby-2.2.7@CourseSelect/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (48.1ms)
+  Rendered /home/mao/.rvm/gems/ruby-2.2.7@CourseSelect/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/mao/.rvm/gems/ruby-2.2.7@CourseSelect/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.0ms)
+  Rendered /home/mao/.rvm/gems/ruby-2.2.7@CourseSelect/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (91.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-01-02 00:19:31 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jSvisSjj+rWoeQUL8YnvvQ0TaH+qJejw6TZSGVYTkgyjj9a5H1vCO4YMTFfza0OVGlUUmnYNuLczh89Wt5J05g==", "user"=>{"name"=>"刘丽艳", "email"=>"tianmao@163.com", "major"=>"计算机", "department"=>"信工所", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"注册"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (1.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('tianmao@163.com') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("name", "email", "major", "department", "password_digest", "created_at", "updated_at", "activation_digest") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "刘丽艳"], ["email", "tianmao@163.com"], ["major", "计算机"], ["department", "信工所"], ["password_digest", "$2a$10$1TyQUmGC9r3GQKJ2uMufluQS9Ufd7EqppiKbFoozTs5yBH8NCDtXO"], ["created_at", "2018-01-02 08:19:32.173485"], ["updated_at", "2018-01-02 08:19:32.173485"], ["activation_digest", "$2a$10$eEJYGtdFQ74Ag8fm4dYmZ.JC7zzXXUT4AVuddw/pOJ7rGXRN2qBtK"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (12.5ms)
+
+UserMailer#account_activation: processed outbound mail in 93.4ms
+Completed 500 Internal Server Error in 512ms (ActiveRecord: 8.4ms)
+
+ActionView::Template::Error (Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
+    6: 欢迎使用选课系统，点击链接激活账户:
+    7: </p>
+    8: 
+    9: <%= link_to "Activate", edit_account_activation_url(@user.activation_token,email: @user.email) %>
+  app/views/user_mailer/account_activation.html.erb:9:in `_app_views_user_mailer_account_activation_html_erb___1552002312933197918_44259800'
+  app/mailers/user_mailer.rb:10:in `account_activation'
+  app/controllers/users_controller.rb:23:in `create'
+
+
+  Rendered /home/mao/.rvm/gems/ruby-2.2.7@CourseSelect/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.6ms)
+  Rendered /home/mao/.rvm/gems/ruby-2.2.7@CourseSelect/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/mao/.rvm/gems/ruby-2.2.7@CourseSelect/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/mao/.rvm/gems/ruby-2.2.7@CourseSelect/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (31.8ms)
+  Rendered /home/mao/.rvm/gems/ruby-2.2.7@CourseSelect/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /home/mao/.rvm/gems/ruby-2.2.7@CourseSelect/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/mao/.rvm/gems/ruby-2.2.7@CourseSelect/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/mao/.rvm/gems/ruby-2.2.7@CourseSelect/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.2ms)
+  Rendered /home/mao/.rvm/gems/ruby-2.2.7@CourseSelect/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (560.3ms)
+  Rendered /home/mao/.rvm/gems/ruby-2.2.7@CourseSelect/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/mao/.rvm/gems/ruby-2.2.7@CourseSelect/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.6ms)
+  Rendered /home/mao/.rvm/gems/ruby-2.2.7@CourseSelect/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (610.0ms)

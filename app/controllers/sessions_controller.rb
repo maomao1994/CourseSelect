@@ -4,6 +4,15 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
+      #判断用户是否激活？
+      # if user.activated?
+      #   log_in user
+      # else
+      #   message  = "Account not activated. "
+      #   message += "Check your email for the activation link."
+      #   flash[:warning] = message
+      #   redirect_to root_url
+      # end
       log_in user
       params[:session][:remember_me] == '1' ? remember_user(user) : forget_user(user)
       flash= {:info => "欢迎回来: #{user.name}，#{user.activated},#{user.email}"}

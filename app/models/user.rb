@@ -1,9 +1,7 @@
 class User < ActiveRecord::Base
-
-  before_save :downcase_email
   attr_accessor :remember_token, :activation_token
+  before_save :downcase_email
   before_create :create_activation_digest
-
 
 
   validates :name, presence: true, length: {maximum: 50}
@@ -37,6 +35,7 @@ class User < ActiveRecord::Base
     SecureRandom.urlsafe_base64
   end
 
+  #在数据库中记录一个用户
   def user_remember
     self.remember_token = User.new_token
     update_attribute(:remember_digest, User.digest(remember_token))
@@ -49,6 +48,7 @@ class User < ActiveRecord::Base
   # Returns true if the given token matches the digest.
   def user_authenticated?(attribute, token)
     digest = self.send("#{attribute}_digest")
+    #remember_digest为何没有写入数据？
     return false if digest.nil?
     BCrypt::Password.new(digest).is_password?(token)
   end
