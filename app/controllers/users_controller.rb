@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in, only: :update
+  before_action :logged_in, only: [:edit, :update, :destroy]
   before_action :correct_user, only: [:update, :destroy]
 
   # #A template for code to show only active users.
@@ -21,6 +21,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       UserMailer.account_activation(@user).deliver_now
+      #@user.send_activation_email
       flash[:info] = "Please check your email to activate your account."
       redirect_to root_url, flash: {success: "新账号注册成功,请登陆"}
     else
@@ -30,6 +31,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    #UserMailer.send_email.deliver_now
     @user=User.find_by_id(params[:id])
   end
 
