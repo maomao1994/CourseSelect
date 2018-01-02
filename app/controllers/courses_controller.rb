@@ -58,7 +58,7 @@ class CoursesController < ApplicationController
   #-------------------------for students----------------------
 
   def list
-    UserMailer.password_reset.deliver_now
+    #UserMailer.password_reset.deliver_now
     #-------QiaoCode--------
     #所有可以选择的课程
     @course=Course.where(:open=>true)
