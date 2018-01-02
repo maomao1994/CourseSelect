@@ -53,7 +53,7 @@ class User < ActiveRecord::Base
     BCrypt::Password.new(digest).is_password?(token)
   end
 
-  # Activates an account.
+  # 激活账户
   def activate
     update_attribute(:activated,    true)
     update_attribute(:activated_at, Time.zone.now)
