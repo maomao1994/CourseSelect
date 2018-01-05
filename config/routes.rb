@@ -24,26 +24,31 @@ Rails.application.routes.draw do
       get :quit
       get :open
       get :close
+
     end
     collection do
       get :list
       get :credit
       get :mycourses
       get :choosecourses
+      get :downloadcsv
     end
   end
-
   resources :grades do
     member do
+      get :evaluate
       #post :update_sec
+      get :update_sec
+      get :show_eva
     end
+
     collection do
       get :index
       get :update
       get :evaluate
       post :update_sec
-      get :update_sec
-      get :show_eva
+      # get :update_sec
+      #get :show_eva
     end
   end
 

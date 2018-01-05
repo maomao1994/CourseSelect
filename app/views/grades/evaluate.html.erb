@@ -33,6 +33,7 @@
                     <td><%= grade.course.name %></td>
                     <% if grade.evaluate_score == nil || grade.class_score == nil || grade.homework_score == nil || grade.difficulty_score == nil || grade.harvest_score == nil%>
                     <% tid = grade.id %>
+
                     <%= form_for :grade, :url => { :action => "update_sec"} do |f| %>
                       <%= hidden_field_tag :id, tid %>
                       <td><%= f.number_field :evaluate_score, class: 'form-control',  placeholder: "请输入0-5的数字" %></td>
@@ -42,6 +43,7 @@
                       <td><%= f.number_field :harvest_score, class: 'form-control',  placeholder: "请输入0-5的数字" %></td>
                       <td><%= f.submit "提交", class: "btn btn-success" %></td>
                     <% end %>
+
                     <% else %>
                       <td> </td>
                       <td> </td>

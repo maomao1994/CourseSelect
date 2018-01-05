@@ -73,7 +73,16 @@ class CoursesController < ApplicationController
     @course=tmp
   end
 
-
+  ############### 添加下载 ###################
+  def downloadcsv
+    @course = current_user.courses.order(:course_code)
+    respond_to do |format|
+      format.html
+      format.csv {send_data @course.to_csv}
+      #format.xls {send_data @course.to_csv(col_sep: "\t") }
+    end
+  end
+  ############# 添加下载结束 ####################
 
   def select
     @course=Course.find_by_id(params[:id])
