@@ -34521,3 +34521,219 @@ Processing by GradesController#evaluate as HTML
   Rendered layouts/_content.html.erb (0.2ms)
   Rendered layouts/_footer.html.erb (0.1ms)
 Completed 200 OK in 145ms (Views: 123.2ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-04 22:50:01 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomesController#index as HTML
+  Rendered homes/index.html.erb within layouts/application (978.2ms)
+  Rendered layouts/_header.html.erb (9.6ms)
+  Rendered layouts/_content.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 1246ms (Views: 1218.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-01-04 22:50:11 -0800
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (38.2ms)
+  Rendered users/_form.html.erb (917.6ms)
+  Rendered users/new.html.erb within layouts/application (919.4ms)
+  Rendered layouts/_header.html.erb (3.9ms)
+  Rendered layouts/_content.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 1074ms (Views: 1016.0ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/sessions/login" for 127.0.0.1 at 2018-01-04 22:50:16 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (29.4ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_content.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 169ms (Views: 166.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions/login" for 127.0.0.1 at 2018-01-04 22:50:21 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HUatQ+7LL4Nu80DIFrmGxklDxL/R0VVqPXEaQOc73xC4axN1ZtrdN2bZ8oMo7UqEDjnx+P5/qzbmSLT8MdOQGg==", "session"=>{"email"=>"student1@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "button"=>""}
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "student1@test.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 219ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-04 22:50:21 -0800
+Processing by HomesController#index as HTML
+  Rendered homes/index.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 36]]
+  Rendered layouts/_header.html.erb (4.6ms)
+  Rendered layouts/_content.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 102ms (Views: 100.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2018-01-04 22:50:24 -0800
+Processing by CoursesController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 36]]
+  [1m[36mCourse Load (0.7ms)[0m  [1mSELECT "courses".* FROM "courses" WHERE "courses"."open" = $1[0m  [["open", "t"]]
+  [1m[35mCourse Load (1.1ms)[0m  SELECT "courses".* FROM "courses" INNER JOIN "grades" ON "courses"."id" = "grades"."course_id" WHERE "grades"."user_id" = $1  [["user_id", 36]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "courses".* FROM "courses" WHERE "courses"."open" = $1[0m  [["open", true]]
+  Rendered shared/_sidenav.html.erb (67.9ms)
+  [1m[35mUser Load (5.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 35]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 34]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 28]]
+  Rendered courses/index.html.erb within layouts/application (116.8ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_content.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 348ms (Views: 211.0ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/grades" for 127.0.0.1 at 2018-01-04 22:50:29 -0800
+Processing by GradesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 36]]
+  [1m[35mCourse Load (0.3ms)[0m  SELECT "courses".* FROM "courses" WHERE "courses"."open" = $1  [["open", "t"]]
+  [1m[36mCourse Load (1.3ms)[0m  [1mSELECT "courses".* FROM "courses" INNER JOIN "grades" ON "courses"."id" = "grades"."course_id" WHERE "grades"."user_id" = $1[0m  [["user_id", 36]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "courses".* FROM "courses" WHERE "courses"."open" = $1  [["open", true]]
+  Rendered shared/_sidenav.html.erb (10.5ms)
+  [1m[36mGrade Load (0.9ms)[0m  [1mSELECT "grades".* FROM "grades" WHERE "grades"."user_id" = $1[0m  [["user_id", 36]]
+  [1m[35mCourse Load (0.7ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 33]]
+  [1m[36mCourse Load (6.5ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 27]]
+  [1m[35mCourse Load (2.5ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 34]]
+  Rendered grades/index.html.erb within layouts/application (91.1ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+  Rendered layouts/_content.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 233ms (Views: 213.3ms | ActiveRecord: 15.3ms)
+
+
+Started GET "/grades" for 127.0.0.1 at 2018-01-04 22:51:51 -0800
+Processing by GradesController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 36]]
+  [1m[35mCourse Load (0.3ms)[0m  SELECT "courses".* FROM "courses" WHERE "courses"."open" = $1  [["open", "t"]]
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT "courses".* FROM "courses" INNER JOIN "grades" ON "courses"."id" = "grades"."course_id" WHERE "grades"."user_id" = $1[0m  [["user_id", 36]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT "courses".* FROM "courses" WHERE "courses"."open" = $1  [["open", true]]
+  Rendered shared/_sidenav.html.erb (15.9ms)
+  [1m[36mGrade Load (0.9ms)[0m  [1mSELECT "grades".* FROM "grades" WHERE "grades"."user_id" = $1[0m  [["user_id", 36]]
+  [1m[35mCourse Load (0.5ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 33]]
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 27]]
+  [1m[35mCourse Load (0.3ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 34]]
+  Rendered grades/index.html.erb within layouts/application (26.6ms)
+  Rendered layouts/_header.html.erb (2.7ms)
+  Rendered layouts/_content.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 97ms (Views: 90.3ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2018-01-04 22:51:56 -0800
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (4.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 36]]
+  [1m[35mCourse Load (4.5ms)[0m  SELECT "courses".* FROM "courses" WHERE "courses"."open" = $1  [["open", "t"]]
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT "courses".* FROM "courses" INNER JOIN "grades" ON "courses"."id" = "grades"."course_id" WHERE "grades"."user_id" = $1[0m  [["user_id", 36]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "courses".* FROM "courses" WHERE "courses"."open" = $1  [["open", true]]
+  Rendered shared/_sidenav.html.erb (18.2ms)
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 35]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 34]]
+  [1m[36mUser Load (2.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 28]]
+  Rendered courses/index.html.erb within layouts/application (38.6ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_content.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 136ms (Views: 118.0ms | ActiveRecord: 14.1ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2018-01-04 22:57:31 -0800
+Processing by CoursesController#index as HTML
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 36]]
+  [1m[36mCourse Load (2.5ms)[0m  [1mSELECT "courses".* FROM "courses" WHERE "courses"."open" = $1[0m  [["open", "t"]]
+  [1m[35mCourse Load (2.1ms)[0m  SELECT "courses".* FROM "courses" INNER JOIN "grades" ON "courses"."id" = "grades"."course_id" WHERE "grades"."user_id" = $1  [["user_id", 36]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "courses".* FROM "courses" WHERE "courses"."open" = $1[0m  [["open", true]]
+  Rendered shared/_sidenav.html.erb (15.8ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 35]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 34]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 28]]
+  Rendered courses/index.html.erb within layouts/application (31.3ms)
+  Rendered layouts/_header.html.erb (2.7ms)
+  Rendered layouts/_content.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 125ms (Views: 112.9ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/assets/application.self-e0511daf77394d1bf649c764dada1c9c167c4558f89aea5247f5b29d96fb2c10.css?body=1" for 127.0.0.1 at 2018-01-04 22:57:31 -0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2018-01-04 22:57:31 -0800
+
+
+Started GET "/assets/account_activations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-01-04 22:57:31 -0800
+
+
+Started GET "/assets/bootstrap.self-b38817c3e3a3049abb1fc08dd6ae448b23330f8453226efdb074710209474f75.js?body=1" for 127.0.0.1 at 2018-01-04 22:57:31 -0800
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 127.0.0.1 at 2018-01-04 22:57:31 -0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2018-01-04 22:57:31 -0800
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for 127.0.0.1 at 2018-01-04 22:57:31 -0800
+
+
+Started GET "/assets/background-d6049bed5a9f543a5666a01dcb723d7eeb74907d3a673ccb520e6e7b4c0955f2.jpg" for 127.0.0.1 at 2018-01-04 22:57:32 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-04 22:58:12 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (3.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomesController#index as HTML
+  Rendered homes/index.html.erb within layouts/application (515.1ms)
+  Rendered layouts/_header.html.erb (10.1ms)
+  Rendered layouts/_content.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 736ms (Views: 669.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/login" for 127.0.0.1 at 2018-01-04 22:58:22 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (74.2ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_content.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 128ms (Views: 126.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions/login" for 127.0.0.1 at 2018-01-04 22:58:28 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ySsNFrF1q6YoVcgZCAyhiV7cvQMVG9ZkTuf9tHW50bqpXYnbTNJk0MY7/7t62Thw/nuz0x9VGLsyKphWAaPPbg==", "session"=>{"email"=>"student1@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "button"=>""}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "student1@test.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 352ms (ActiveRecord: 16.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-04 22:58:29 -0800
+Processing by HomesController#index as HTML
+  Rendered homes/index.html.erb within layouts/application (6.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 36]]
+  Rendered layouts/_header.html.erb (5.9ms)
+  Rendered layouts/_content.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 113ms (Views: 110.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2018-01-04 22:58:30 -0800
+Processing by CoursesController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 36]]
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT "courses".* FROM "courses" WHERE "courses"."open" = $1[0m  [["open", "t"]]
+  [1m[35mCourse Load (1.4ms)[0m  SELECT "courses".* FROM "courses" INNER JOIN "grades" ON "courses"."id" = "grades"."course_id" WHERE "grades"."user_id" = $1  [["user_id", 36]]
+  Rendered shared/_sidenav.html.erb (32.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 35]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 34]]
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 28]]
+  Rendered courses/index.html.erb within layouts/application (56.5ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_content.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 325ms (Views: 143.2ms | ActiveRecord: 7.1ms)
