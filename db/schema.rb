@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171218031114) do
+ActiveRecord::Schema.define(version: 20180105050753) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,8 +38,13 @@ ActiveRecord::Schema.define(version: 20171218031114) do
     t.integer  "course_id"
     t.integer  "user_id"
     t.integer  "grade"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "evaluate_score"
+    t.integer  "class_score"
+    t.integer  "homework_score"
+    t.integer  "difficulty_score"
+    t.integer  "harvest_score"
   end
 
   add_index "grades", ["course_id"], name: "index_grades_on_course_id", using: :btree
@@ -60,6 +65,7 @@ ActiveRecord::Schema.define(version: 20171218031114) do
     t.string   "activation_digest"
     t.boolean  "activated",         default: false
     t.datetime "activated_at"
+    t.string   "degree"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

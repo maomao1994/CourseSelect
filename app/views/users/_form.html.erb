@@ -43,6 +43,16 @@
     </div>
 
     <div class="form-group">
+          <%= f.label "学位", class: 'col-sm-3 control-label' %>
+          <div class="col-sm-9">
+            <div class="input-group">
+              <div class="input-group-addon"><span class="glyphicon glyphicon-home"></span></div>
+              <%= f.text_field :degree, class: 'form-control', placeholder: "输入获取学位：学硕/博士/专硕" %>
+            </div>
+          </div>
+      </div>
+
+    <div class="form-group">
       <%= f.label "密码", class: 'col-sm-3 control-label' %>
       <div class="col-sm-9">
         <div class="input-group">

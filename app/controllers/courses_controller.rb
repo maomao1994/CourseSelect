@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
 
-  before_action :student_logged_in, only: [:select, :quit, :list]
+  before_action :student_logged_in, only: [:select, :quit, :list ,:credit]
   before_action :teacher_logged_in, only: [:new, :create, :edit, :destroy, :update, :open, :close]#add open by qiao
   before_action :logged_in, only: :index
 
@@ -73,6 +73,8 @@ class CoursesController < ApplicationController
     @course=tmp
   end
 
+
+
   def select
     @course=Course.find_by_id(params[:id])
     #处理冲突信息
@@ -99,6 +101,31 @@ class CoursesController < ApplicationController
     redirect_to courses_path, flash: flash
   end
 
+  ######################
+  def credit
+      @course=current_user.teaching_courses if teacher_logged_in?
+      @course=current_user.courses if student_logged_in?
+      tmp = []
+      @course.each do |course|
+        @current_user.grades.each do |grade|
+          if grade.course_id == course.id && grade.grade != nil
+            tmp <<course
+          end
+        end
+      end
+      @course = @course - tmp
+  end
+
+  def evaluate
+      @grades=Grade.find_by_id(params[:id])
+      if student_logged_in?
+
+      else
+        redirect_to root_path, flash: {:warning=>"请先登陆"}
+      end
+
+  end
+  #######################
 
   #-------------------------for both teachers and students----------------------
 

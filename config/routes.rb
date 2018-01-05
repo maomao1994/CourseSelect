@@ -27,15 +27,35 @@ Rails.application.routes.draw do
     end
     collection do
       get :list
+      get :credit
       get :mycourses
       get :choosecourses
     end
   end
 
-  resources :grades, only: [:index, :update]
+  resources :grades do
+    member do
+      #post :update_sec
+    end
+    collection do
+      get :index
+      get :update
+      get :evaluate
+      post :update_sec
+      get :update_sec
+      get :show_eva
+    end
+  end
+
+
+
+
+
+
+  #resources :grades, only: [:index, :update]
   resources :users
   resources :account_activations, only: [:edit]
-  
+
   get 'sessions/login' => 'sessions#new'
   post 'sessions/login' => 'sessions#create'
   delete 'sessions/logout' => 'sessions#destroy'
