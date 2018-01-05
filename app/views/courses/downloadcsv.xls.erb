@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">id</Data></Cell>
+        <Cell><Data ss:Type="String">name</Data></Cell>
+        <Cell><Data ss:Type="String">course_code</Data></Cell>
+        <Cell><Data ss:Type="String">course_type</Data></Cell>
+        <Cell><Data ss:Type="String">teaching_type</Data></Cell>
+        <Cell><Data ss:Type="String">exam_type</Data></Cell>
+        <Cell><Data ss:Type="String">credit</Data></Cell>
+        <Cell><Data ss:Type="String">limit_num</Data></Cell>
+        <Cell><Data ss:Type="String">student_num</Data></Cell>
+        <Cell><Data ss:Type="String">class_room</Data></Cell>
+        <Cell><Data ss:Type="String">course_time</Data></Cell>
+        <Cell><Data ss:Type="String">course_week</Data></Cell>
+        <Cell><Data ss:Type="String">teacher_id</Data></Cell>
+      </Row>
+    <% @course.each do |course| %>
+      <Row>
+        <Cell><Data ss:Type="String"><%= course.id %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= course.name %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= course.course_code %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= course.course_type %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= course.teaching_type %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= course.exam_type %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= course.credit %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= course.limit_num %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= course.student_num %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= course.class_room %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= course.course_time %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= course.course_week %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= course.teacher_id %></Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

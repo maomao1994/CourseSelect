@@ -1,3 +1,4 @@
+# encoding: utf-8
 class CoursesController < ApplicationController
 
   before_action :student_logged_in, only: [:select, :quit, :list ,:credit]
@@ -78,8 +79,8 @@ class CoursesController < ApplicationController
     @course = current_user.courses.order(:course_code)
     respond_to do |format|
       format.html
-      format.csv {send_data @course.to_csv}
-      #format.xls {send_data @course.to_csv(col_sep: "\t") }
+      format.csv {send_data @course.to_csv,:type => 'text/csv; charset=utf-8;; header=present'}
+      format.xls #{send_data @course.to_csv(col_sep: "\t") }
     end
   end
   ############# 添加下载结束 ####################
