@@ -99,7 +99,7 @@ class CoursesController < ApplicationController
       current_user.courses<<@course
       flash={:success => "成功选择课程: #{@course.name},上课时间：#{@course.course_time}"}
     else
-      flash={:fail=> "选课不成功：#{@course.name}的上课时间和#{tmp}课程时间冲突"}
+      flash={:danger => "选课不成功：#{@course.name}的上课时间#{@course.name}和#{tmp}课程时间冲突"}
     end
     redirect_to courses_path, flash: flash
   end
