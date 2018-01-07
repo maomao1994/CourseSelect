@@ -19,7 +19,4 @@ class UserMailer < ApplicationMailer
     @greeting ="Hi"
     mail to: "to@example.com"
   end
-
-
-
 end
