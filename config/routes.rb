@@ -48,7 +48,7 @@ Rails.application.routes.draw do
       get :evaluate
       post :update_sec
       # get :update_sec
-      #get :show_eva
+      get :show_eva
     end
   end
 
