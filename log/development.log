@@ -40658,3 +40658,373 @@ Processing by GradesController#show_eva as HTML
   Rendered layouts/_content.html.erb (0.2ms)
   Rendered layouts/_footer.html.erb (0.1ms)
 Completed 200 OK in 297ms (Views: 230.1ms | ActiveRecord: 63.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-07 03:19:58 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (29.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomesController#index as HTML
+  Rendered homes/index.html.erb within layouts/application (1235.7ms)
+  [1m[35mUser Load (32.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 36]]
+  Rendered layouts/_header.html.erb (241.8ms)
+  Rendered layouts/_content.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (1.4ms)
+Completed 200 OK in 1884ms (Views: 1774.5ms | ActiveRecord: 76.6ms)
+
+
+Started GET "/rails/mailers/user_mailer/account_activation" for 127.0.0.1 at 2018-01-07 03:20:51 -0800
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/account_activation"}
+  [1m[36mUser Load (2.3ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (1.1ms)
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (1.0ms)
+
+UserMailer#account_activation: processed outbound mail in 441.0ms
+  Rendered /home/mao/.rvm/gems/ruby-2.2.7@CourseSelect/gems/railties-4.2.5.2/lib/rails/templates/rails/mailers/email.html.erb (18.2ms)
+Completed 200 OK in 571ms (Views: 59.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/rails/mailers/user_mailer/account_activation?part=text%2Fhtml" for 127.0.0.1 at 2018-01-07 03:20:52 -0800
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "path"=>"user_mailer/account_activation"}
+  [1m[35mUser Load (2.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (0.6ms)
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (0.2ms)
+
+UserMailer#account_activation: processed outbound mail in 56.2ms
+  Rendered text template (0.0ms)
+Completed 200 OK in 94ms (Views: 9.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/rails/mailers/user_mailer/account_activation?part=text%2Fplain" for 127.0.0.1 at 2018-01-07 03:21:54 -0800
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/plain", "path"=>"user_mailer/account_activation"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (11.4ms)
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (0.3ms)
+
+UserMailer#account_activation: processed outbound mail in 24.7ms
+  Rendered text template (0.0ms)
+Completed 200 OK in 46ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+
+
+Started GET "/account_activations/fFb_F94mgQtmlSvRFGsITw/edit?email=michael%40michaelhartl.com" for 127.0.0.1 at 2018-01-07 03:35:30 -0800
+Processing by AccountActivationsController#edit as HTML
+  Parameters: {"email"=>"michael@michaelhartl.com", "id"=>"fFb_F94mgQtmlSvRFGsITw"}
+  [1m[35mUser Load (5.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "michael@michaelhartl.com"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 19ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-07 03:35:30 -0800
+Processing by HomesController#index as HTML
+  Rendered homes/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 36]]
+  Rendered layouts/_header.html.erb (2.4ms)
+  Rendered layouts/_content.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 73ms (Views: 72.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/rails/mailers/user_mailer/account_activation" for 127.0.0.1 at 2018-01-07 04:11:56 -0800
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/account_activation"}
+  [1m[35mUser Load (1.8ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (5.1ms)
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (0.3ms)
+
+UserMailer#account_activation: processed outbound mail in 52.0ms
+  Rendered /home/mao/.rvm/gems/ruby-2.2.7@CourseSelect/gems/railties-4.2.5.2/lib/rails/templates/rails/mailers/email.html.erb (8.7ms)
+Completed 200 OK in 98ms (Views: 29.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/rails/mailers/user_mailer/account_activation?part=text%2Fhtml" for 127.0.0.1 at 2018-01-07 04:11:56 -0800
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "path"=>"user_mailer/account_activation"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (0.3ms)
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (0.4ms)
+
+UserMailer#account_activation: processed outbound mail in 28.4ms
+  Rendered text template (0.0ms)
+Completed 200 OK in 36ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-07 18:05:00 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (53.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomesController#index as HTML
+  Rendered homes/index.html.erb within layouts/application (1879.5ms)
+  Rendered layouts/_header.html.erb (13.7ms)
+  Rendered layouts/_content.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 2297ms (Views: 2245.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/login" for 127.0.0.1 at 2018-01-07 18:05:16 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (59.7ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_content.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 186ms (Views: 184.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions/login" for 127.0.0.1 at 2018-01-07 18:05:22 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bD8ho6vENi75ktgVhgQ+pUbllP3sqJ3ob6qrQZXyQll8rEFJ7DXw4oURICTjGmoZkuj8opzID94a4OFuv/mCDg==", "session"=>{"email"=>"student1@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "button"=>""}
+  [1m[35mUser Load (60.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "student1@test.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 517ms (ActiveRecord: 271.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-07 18:05:22 -0800
+Processing by HomesController#index as HTML
+  Rendered homes/index.html.erb within layouts/application (8.3ms)
+  [1m[36mUser Load (9.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 36]]
+  Rendered layouts/_header.html.erb (14.7ms)
+  Rendered layouts/_content.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 84ms (Views: 74.5ms | ActiveRecord: 9.2ms)
+
+
+Started DELETE "/sessions/logout" for 127.0.0.1 at 2018-01-07 18:05:25 -0800
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"PzB9+N+RrolvxYaSvkWfyQdvTptgAzE3sZ1qI5hUZscvox0SmGBoRRNGfqPbW8t102ImxBBjowHE1yAMsl+mkA=="}
+  [1m[35mUser Load (10.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 36]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 18ms (ActiveRecord: 10.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-07 18:05:25 -0800
+Processing by HomesController#index as HTML
+  Rendered homes/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_content.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 59ms (Views: 58.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-01-07 18:05:26 -0800
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (19.5ms)
+  Rendered users/_form.html.erb (1159.4ms)
+  Rendered users/new.html.erb within layouts/application (1171.0ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_content.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 1297ms (Views: 1295.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-01-07 18:05:43 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/q9OpFHf7BTtEOMu4CN+GKMwG53l9xo5n30ZTD6JRIDuPC5OFi4q2JGTGx+FPSqkdz1zwpWXiA/qN1NjFIKE1w==", "user"=>{"name"=>"刘丽艳", "email"=>"tianmao818@qq.com", "major"=>"计算机", "department"=>"信息工程研究所", "degree"=>"1212121", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"注册"}
+Unpermitted parameter: degree
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (21.5ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('tianmao818@qq.com') LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  Rendered shared/_error_messages.html.erb (0.8ms)
+  Rendered users/_form.html.erb (6.7ms)
+  Rendered users/new.html.erb within layouts/application (10.9ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_content.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 332ms (Views: 120.5ms | ActiveRecord: 22.0ms)
+
+
+Started GET "/sessions/login" for 127.0.0.1 at 2018-01-07 18:09:07 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_content.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 113ms (Views: 112.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions/login" for 127.0.0.1 at 2018-01-07 18:09:11 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EebXz4OCtkPjzVLGkjStXO2niOuxMTgmCqMxFjj31PwBdbclxHNwj59Oqvf3KvngOargtMFRqhB/6Xs5EvwUqw==", "session"=>{"email"=>"admin@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "button"=>""}
+  [1m[35mUser Load (28.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "admin@test.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 220ms (ActiveRecord: 30.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-07 18:09:12 -0800
+Processing by HomesController#index as HTML
+  Rendered homes/index.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (6.5ms)
+  Rendered layouts/_content.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 124ms (Views: 122.2ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/sessions/logout" for 127.0.0.1 at 2018-01-07 18:09:19 -0800
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2/e+9ldYjX81exSMaaF5VvYuh+WkJXLnV59Tyq5PqyTLZN4cEKlLs0n47L0Mvy3qIiPvutRF4NEi1RnlhERrcw=="}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 11ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-07 18:09:19 -0800
+Processing by HomesController#index as HTML
+  Rendered homes/index.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_content.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 147ms (Views: 145.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/login" for 127.0.0.1 at 2018-01-07 18:09:21 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_header.html.erb (4.3ms)
+  Rendered layouts/_content.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 149ms (Views: 148.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions/login" for 127.0.0.1 at 2018-01-07 18:09:25 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vw2niQbedQPyGtsDA61xq4MYVZ9GW6Vv0IwMUvPIR51HnsdjQS+zz46ZIzJmsyUXVxU9wDY7N1mlxkZ92cOHyg==", "session"=>{"email"=>"student1@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "button"=>""}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "student1@test.com"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 175ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-07 18:09:26 -0800
+Processing by HomesController#index as HTML
+  Rendered homes/index.html.erb within layouts/application (5.2ms)
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 36]]
+  Rendered layouts/_header.html.erb (13.6ms)
+  Rendered layouts/_content.html.erb (5.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 122ms (Views: 120.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/36/edit" for 127.0.0.1 at 2018-01-07 18:09:30 -0800
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"36"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 36]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 36]]
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered users/edit.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_content.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 94ms (Views: 91.0ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/users/36" for 127.0.0.1 at 2018-01-07 18:09:38 -0800
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Pvi6JuuvL5pjxJwmyqMmc8LeTtE6f84/ZLNGydY9plIua9rMrF7pVh9HZBevvXLPFtMmjkofXAkR+Qzm/DZmBQ==", "user"=>{"name"=>"行东人", "email"=>"student1@test.com", "major"=>"通信与信息系统", "department"=>"信息工程研究所", "degree"=>"博士", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"更新", "id"=>"36"}
+  [1m[36mUser Load (2.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 36]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 36]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "36"]]
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mUser Exists (25.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('student1@test.com') AND "users"."id" != 36) LIMIT 1[0m
+  [1m[35mSQL (39.7ms)[0m  UPDATE "users" SET "degree" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["degree", "博士"], ["updated_at", "2018-01-08 02:09:38.365417"], ["id", 36]]
+  [1m[36m (26.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 128ms (ActiveRecord: 94.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-07 18:09:38 -0800
+Processing by HomesController#index as HTML
+  Rendered homes/index.html.erb within layouts/application (2.5ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 36]]
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered layouts/_content.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 98ms (Views: 96.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2018-01-07 18:09:40 -0800
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 36]]
+  [1m[35mCourse Load (50.3ms)[0m  SELECT "courses".* FROM "courses" WHERE "courses"."open" = $1  [["open", "t"]]
+  [1m[36mCourse Load (20.3ms)[0m  [1mSELECT "courses".* FROM "courses" INNER JOIN "grades" ON "courses"."id" = "grades"."course_id" WHERE "grades"."user_id" = $1[0m  [["user_id", 36]]
+  Rendered shared/_sidenav.html.erb (92.7ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 34]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 28]]
+  Rendered courses/index.html.erb within layouts/application (138.5ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_content.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 436ms (Views: 173.8ms | ActiveRecord: 100.3ms)
+
+
+Started GET "/courses/credit" for 127.0.0.1 at 2018-01-07 18:09:48 -0800
+Processing by CoursesController#credit as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 36]]
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT "courses".* FROM "courses" INNER JOIN "grades" ON "courses"."id" = "grades"."course_id" WHERE "grades"."user_id" = $1[0m  [["user_id", 36]]
+  [1m[35mGrade Load (16.4ms)[0m  SELECT "grades".* FROM "grades" WHERE "grades"."user_id" = $1  [["user_id", 36]]
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT "courses".* FROM "courses" WHERE "courses"."open" = $1[0m  [["open", "t"]]
+  Rendered shared/_sidenav.html.erb (3.7ms)
+  [1m[35mCourse Load (0.3ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 33]]
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 27]]
+  Rendered courses/credit.html.erb within layouts/application (17.0ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_content.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (4.0ms)
+Completed 200 OK in 125ms (Views: 83.5ms | ActiveRecord: 18.7ms)
+
+
+Started GET "/users/36/edit" for 127.0.0.1 at 2018-01-07 18:10:48 -0800
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"36"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 36]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 36]]
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered users/edit.html.erb within layouts/application (14.0ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_content.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 84ms (Views: 78.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/36/edit" for 127.0.0.1 at 2018-01-07 18:11:11 -0800
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"36"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 36]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 36]]
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered users/edit.html.erb within layouts/application (8.5ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_content.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 62ms (Views: 59.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self-e0511daf77394d1bf649c764dada1c9c167c4558f89aea5247f5b29d96fb2c10.css?body=1" for 127.0.0.1 at 2018-01-07 18:11:11 -0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2018-01-07 18:11:11 -0800
+
+
+Started GET "/assets/bootstrap.self-b38817c3e3a3049abb1fc08dd6ae448b23330f8453226efdb074710209474f75.js?body=1" for 127.0.0.1 at 2018-01-07 18:11:11 -0800
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 127.0.0.1 at 2018-01-07 18:11:11 -0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2018-01-07 18:11:11 -0800
+
+
+Started GET "/assets/account_activations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-01-07 18:11:11 -0800
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for 127.0.0.1 at 2018-01-07 18:11:11 -0800
+
+
+Started GET "/assets/background-d6049bed5a9f543a5666a01dcb723d7eeb74907d3a673ccb520e6e7b4c0955f2.jpg" for 127.0.0.1 at 2018-01-07 18:11:11 -0800
